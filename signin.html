@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPMART - Home</title>
+    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="signin.css">
+    <link rel="icon" href="logo.png" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <center>
+    
+        <h2>LAPMART Sign up form</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="" method="post">
+                <h1>Create Account</h1>
+                        
+                <input type="text" placeholder="Name" name="txtName" id = "txtName"/>
+                <input type="email" placeholder="Email" required name="txtEmail" id="txtEmail"/>
+                <input type="password" placeholder="Password" id="txtPassword" name="txtPassword" required/>
+                    <input type="password" placeholder="Confirm Password" id="txtConfimPassword" name="txtConfimPassword"/>
+                <input type="number" placeholder="Contact Number" name="txtContactNo" id="txtContactNo" pattern="[0-9]{10}" required />        
+                
+                <input type="submit" value="Sign Up" onClick="checkPassword()">
+                <a href="index.html">Go to homepage</a>
+            </form>
+            
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="loginHandler.php" method="post">
+                <h1>Sign in</h1>
+             
+                <input type="email" name="txtEmail" placeholder="Email" />
+                <input type="password" name="txtPassword" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <input type="submit" value="Sign In" name="btnSubmit" onClick="index.html">
+                <br>
+                <a href="index.html">Back to home</a>
+            </form>
+             
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login <br> with your personal info</p>
+                    
+                    <input type="submit" class="ghost" id="signIn" value="Sign In">
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details <br> and register with us</p>
+                     
+                    <input type="submit" class="ghost" id="signUp" value="Sign Up"> 
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+    <script>
+        
+        const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+        </script>
+    
+    <footer>
+        <p>&copy; 2024 LAPMART</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
